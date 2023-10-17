@@ -45,9 +45,10 @@ public class ServiceSearchForm extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Recherche des services");
+        setTitle("Recherche de clients par service");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Recherche des services"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("clients par service"));
+        jPanel1.setToolTipText("");
 
         searchList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

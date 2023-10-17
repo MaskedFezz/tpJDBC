@@ -62,19 +62,19 @@ public class ClientForm extends javax.swing.JInternalFrame {
         nomTxt = new javax.swing.JTextField();
         prenomTxt = new javax.swing.JTextField();
         serviceBox = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        AjouterButton = new javax.swing.JButton();
+        modifierButton = new javax.swing.JButton();
+        SupprimerButton = new javax.swing.JButton();
         dateTxt = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         clientList = new javax.swing.JTable();
 
         setClosable(true);
-        setMaximizable(true);
-        setResizable(true);
+        setIconifiable(true);
+        setTitle("Gestion des clients");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Gestion des clients"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulaire des clients"));
 
         jLabel1.setText("Nom");
 
@@ -102,24 +102,24 @@ public class ClientForm extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Ajouter");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AjouterButton.setText("Ajouter");
+        AjouterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AjouterButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Modifier");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        modifierButton.setText("Modifier");
+        modifierButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                modifierButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("supprimer");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        SupprimerButton.setText("supprimer");
+        SupprimerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                SupprimerButtonActionPerformed(evt);
             }
         });
 
@@ -136,15 +136,16 @@ public class ClientForm extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4))
                 .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nomTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(prenomTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                        .addComponent(nomTxt))
                     .addComponent(serviceBox, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prenomTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SupprimerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(modifierButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AjouterButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,15 +159,15 @@ public class ClientForm extends javax.swing.JInternalFrame {
                             .addComponent(nomTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(AjouterButton)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(prenomTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(prenomTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
@@ -175,22 +176,13 @@ public class ClientForm extends javax.swing.JInternalFrame {
                             .addComponent(serviceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jButton2)
+                        .addComponent(modifierButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(SupprimerButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 24, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("List des clients"));
 
         clientList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,34 +199,41 @@ public class ClientForm extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(clientList);
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(324, 324, 324)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -252,46 +251,47 @@ public class ClientForm extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_serviceBoxActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void SupprimerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupprimerButtonActionPerformed
         // TODO add your handling code here:
-        
+        try{
           int reponse = JOptionPane.showConfirmDialog(this, "Voulez vous vraiment supprimer ce client ?");
-        
-            if(reponse == 0){
-            cs.delete(cs.findById(id));
-            load();
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            if(reponse == 0){
+             cs.delete(cs.findById(id));
+                load();
+          }
+    }
+        catch(NullPointerException e){
+                JOptionPane.showMessageDialog(this,"vous devez selectionner un client dans la liste");
+
+        }
+    }//GEN-LAST:event_SupprimerButtonActionPerformed
+
+    private void AjouterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjouterButtonActionPerformed
         // TODO add your handling code here:
-         cs.create(new Client(nomTxt.getText(),prenomTxt.getText(),dateTxt.getDate(), (Service) serviceBox.getSelectedItem()));
+        try{
+            Client addedClient =new Client(nomTxt.getText(),prenomTxt.getText(),dateTxt.getDate(), (Service) serviceBox.getSelectedItem());
+         if(cs.create(addedClient)){
          JOptionPane.showMessageDialog(this,"Bien ajouté");
          load();
          
          nomTxt.setText(null);
          prenomTxt.setText(null);
          dateTxt.setDate(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
+         }else{
+         JOptionPane.showMessageDialog(this,"client Non ajouté,vérifiez votre connection!");
 
-    private void clientListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientListMouseClicked
-        // TODO add your handling code here:
-        id = Integer.parseInt(clientList.getValueAt(clientList.getSelectedRow(), 0).toString());
-        nomTxt.setText(cs.findById(id).getNom());
-        prenomTxt.setText(cs.findById(id).getPrenom());
-        dateTxt.setDate(cs.findById(id).getDate());
-       // Récupérer le service du client à partir de votre source de données (cs.findById)
-    Service clientService = cs.findById(id).getService();
-
-    // Sélectionner le service dans le JComboBox
-
-      // serviceBox.setSelectedItem(cs.findById(id).getService().toString());
+         }
+        }
+        catch(NullPointerException e){
+        JOptionPane.showMessageDialog(this,"Veuillez remplir tous les champs");
+        }
+    }//GEN-LAST:event_AjouterButtonActionPerformed
 
 
-    }//GEN-LAST:event_clientListMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    private void modifierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierButtonActionPerformed
+    try{
     String updatedNom = nomTxt.getText();
     String updatedPrenom = prenomTxt.getText();
     Date updatedDate = dateTxt.getDate();
@@ -305,24 +305,49 @@ public class ClientForm extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(this, "Client modifié avec succés.");
         load();
     } else {
-        JOptionPane.showMessageDialog(this, "erreur de modification.");
+        JOptionPane.showMessageDialog(this, "erreur de modification,vérifiez votre connection!.");
     }
          nomTxt.setText(null);
          prenomTxt.setText(null);
          dateTxt.setDate(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_modifierButtonActionPerformed
+     catch(NullPointerException e){
+        JOptionPane.showMessageDialog(this,"vous devez selectionner un client dans la liste");
+
+     }
+    }
+    private void clientListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientListMouseClicked
+        int selectedRow = clientList.getSelectedRow();
+        if (selectedRow != -1) {
+            id = Integer.parseInt(clientList.getValueAt(selectedRow, 0).toString());
+            nomTxt.setText(cs.findById(id).getNom());
+            prenomTxt.setText(cs.findById(id).getPrenom());
+            dateTxt.setDate(cs.findById(id).getDate());
+
+          
+            Service selectedService = cs.findById(id).getService();
+
+            for (int i = 0; i < serviceBox.getItemCount(); i++) {
+                Service item = (Service) serviceBox.getItemAt(i);
+                if (item.getId() == selectedService.getId()) {
+                    serviceBox.setSelectedIndex(i);
+                    break; 
+                }
+            }
+        }
+    }//GEN-LAST:event_clientListMouseClicked
 
 public  void loadBox(){
+        serviceBox.removeAllItems(); // Clear existing items
     for(Service s : ss.findAll()){
         serviceBox.addItem(s);
     }
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AjouterButton;
+    private javax.swing.JButton SupprimerButton;
     private javax.swing.JTable clientList;
     private com.toedter.calendar.JDateChooser dateTxt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -330,6 +355,7 @@ public  void loadBox(){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton modifierButton;
     private javax.swing.JTextField nomTxt;
     private javax.swing.JTextField prenomTxt;
     private javax.swing.JComboBox serviceBox;

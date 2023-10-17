@@ -142,6 +142,11 @@ public class ServiceForm extends javax.swing.JInternalFrame {
         });
 
         updateService.setText("Modifier");
+        updateService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateServiceActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,16 +184,25 @@ public class ServiceForm extends javax.swing.JInternalFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
+       try{ 
         String nom = txtNom.getText().toString();
-        ss.create(new Service(nom));
+       if (ss.create(new Service(nom))){
         model.setRowCount(0);
          load();
-        
+       }else {
+      JOptionPane.showMessageDialog(this,"client Non ajouté,vérifiez votre connection!");
+
+       }
+       }catch(NullPointerException e){
+             JOptionPane.showMessageDialog(this,"vous ne pouvez pas ajouter avec un champs et vide");
+
+       }
     }//GEN-LAST:event_addActionPerformed
 
     private void serviceTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceTableMouseClicked
         // TODO add your handling code here:
         id = Integer.parseInt(serviceTable.getValueAt( serviceTable.getSelectedRow(), 0).toString());
+        txtNom.setText(ss.findById(id).toString());
     }//GEN-LAST:event_serviceTableMouseClicked
 
     private void deleteServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteServiceActionPerformed
@@ -200,6 +214,29 @@ public class ServiceForm extends javax.swing.JInternalFrame {
             load();
         }
     }//GEN-LAST:event_deleteServiceActionPerformed
+
+    private void updateServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateServiceActionPerformed
+
+        
+        
+        String updatedNom = txtNom.getText();
+   
+    Service updatedService = new Service(id, updatedNom);
+
+    boolean updated = ss.update(updatedService);
+
+    if (updated) {
+        JOptionPane.showMessageDialog(this, "Service modifié avec succés.");
+        load();
+    } else {
+        JOptionPane.showMessageDialog(this, "erreur de modification.");
+    }
+         txtNom.setText(null);
+        
+        
+        
+        
+    }//GEN-LAST:event_updateServiceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

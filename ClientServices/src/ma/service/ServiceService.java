@@ -37,7 +37,19 @@ public class ServiceService implements IDao<Service>{
 
     @Override
     public boolean update(Service o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ try {
+        String req = "UPDATE service SET nom=? WHERE id=?";
+        PreparedStatement ps = Connexion.getConnection().prepareStatement(req);
+        ps.setString(1, o.getNom());
+        ps.setInt(2, o.getId());
+
+        if (ps.executeUpdate() == 1) {
+            return true;
+        }
+    } catch (SQLException ex) {
+        System.out.println("Erreur de mise à jour d'un client : " + ex.getMessage());
+    }    
+        return false;
     }
 
     @Override
