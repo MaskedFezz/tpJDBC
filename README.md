@@ -9,9 +9,6 @@ This Java project provides a visual interface to handle enigmatic entities and c
 - [Capabilities](#capabilities)
 - [Utilized Technologies](#utilized-technologies)
 - [Set Up](#set-up)
-- [Operational Guidelines](#operational-guidelines)
-- [Covert Contributions](#covert-contributions)
-- [Authorization](#authorization)
 
 ## Insight
 
