@@ -90,4 +90,4 @@ This project was developed within the context of a Java programming course. It o
 1. Clone this repository onto your local machine.
 
 ```shell
-git clone https://github.com/your-username/client-service-management.git
+git clone https://github.com/MaskedFezz/tpJDBC.git
