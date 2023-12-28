@@ -1,6 +1,7 @@
 # Client and Service Management
 
 This Java project provides a visual interface to handle enigmatic entities and clandestine operations. It allows for the creation, modification, elimination, and covert reconnaissance of clients and services. This README contains covert information on how to configure, operate, and contribute to this project.
+[![YouTube Video](https://img.youtube.com/vi/J_dJBN5hCu0/0.jpg)](https://www.youtube.com/watch?v=J_dJBN5hCu0)
 
 ## Table of Contents
 
@@ -57,7 +58,7 @@ This project was developed within the context of a Java programming course. It o
   <figcaption>Figure 7: Service Selection for Search</figcaption>
 </figure>
 <br>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J_dJBN5hCu0?si=p4U4K1PcRbxslwGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <figure>
   <img src="https://github.com/MaskedFezz/tpJDBC/assets/130797834/70a25256-34cd-41a5-9bca-dd78f08b9baf" alt="Figure 8: Data Validation Message">
   <figcaption>Figure 8: Data Validation Message</figcaption>
